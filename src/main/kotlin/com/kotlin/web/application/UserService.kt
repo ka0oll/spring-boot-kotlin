@@ -19,7 +19,8 @@ class UserService(
         return list;
     }
 
-    fun addDefault(){
+    @Transactional
+    fun creteUser(userCreation: UserCreation): UserDto {
         val article = Article(
             title = "Spring Framework 5.0 goes GA",
             headline = "Dear Spring community ...",
@@ -27,14 +28,13 @@ class UserService(
         )
 
         val user = User(
-            login = "springjuergen",
-            firstname = "Juergen",
-            lastname = "Hoeller"
+            login = userCreation.login,
+            firstname = userCreation.firstname,
+            lastname = userCreation.lastname
         )
 
         user.addArticle(article)
-
-        userRepository.save(user);
+        return map(userRepository.save(user))
     }
 
     private fun map(user: User): UserDto {

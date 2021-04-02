@@ -23,6 +23,10 @@ data class ArticleDto(
     val addedAt: LocalDateTime
 )
 
-
+data class UserCreation(
+    val login: String,
+    val firstname: String,
+    val lastname: String
+)
 
 

@@ -1,0 +1,15 @@
+### 조회
+GET http://localhost:8080/users
+Content-Type: application/json
+
+### 생성
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "login": "정주영",
+  "firstname": "jeong",
+  "lastname": "juyoung"
+}
+
+###

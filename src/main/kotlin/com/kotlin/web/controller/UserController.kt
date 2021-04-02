@@ -1,12 +1,11 @@
 package com.kotlin.web.controller
 
+import com.kotlin.web.application.UserCreation
 import com.kotlin.web.application.UserDto
 import com.kotlin.web.application.UserService
 import com.kotlin.web.domain.Article
 import com.kotlin.web.domain.User
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 
 @RequestMapping("/users")
@@ -18,5 +17,10 @@ class UserController(
     @GetMapping("")
     fun getList(): List<UserDto> {
         return userService.getList();
+    }
+
+    @PostMapping("")
+    fun create(@RequestBody user:UserCreation): UserDto{
+        return userService.creteUser(user);
     }
 }
