@@ -5,6 +5,7 @@ import java.time.LocalDateTime
 
 @NoArgs
 data class UserDto(
+    val id:Long,
     val login: String,
     val firstname: String,
     val lastname: String,
@@ -14,10 +15,14 @@ data class UserDto(
 
 @NoArgs
 data class ArticleDto(
+    val id:Long,
     val title: String,
     val headline: String,
     val content: String,
     val slug: String,
     val addedAt: LocalDateTime
 )
+
+
+
 
