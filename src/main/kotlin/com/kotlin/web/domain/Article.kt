@@ -1,19 +1,22 @@
 package com.kotlin.web.domain
 
 import java.time.LocalDateTime
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.ManyToOne
+import javax.persistence.*
 
 @Entity
 class Article(
-    @Id @GeneratedValue var id: Long? = null,
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long? = null,
     var title: String,
     var headline: String,
     var content: String,
     var slug: String = title,
     var addedAt: LocalDateTime = LocalDateTime.now(),
+) {
+    @JoinColumn(name = "user_id")
+    @ManyToOne
+    private var user: User? = null
 
-    @ManyToOne var author: User
-)
+    fun setUser(user: User) {
+        this.user = user;
+    }
+}
