@@ -3,10 +3,12 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("org.springframework.boot") version "2.4.4"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
+
     kotlin("jvm") version "1.4.31"
     kotlin("plugin.spring") version "1.4.31"
     kotlin("plugin.jpa") version "1.4.31"
     kotlin("plugin.allopen") version "1.4.31"
+    kotlin("plugin.noarg") version "1.4.31"
 }
 
 group = "com.kotlin"
@@ -21,7 +23,13 @@ allOpen {
     annotation("javax.persistence.Entity")
     annotation("javax.persistence.Embeddable")
     annotation("javax.persistence.MappedSuperclass")
+    annotation("com.kotlin.web.common.NoArgs")
 }
+
+noArg {
+    annotation("com.kotlin.web.common.NoArgs")
+}
+
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -29,6 +37,8 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+    implementation("org.modelmapper:modelmapper:2.3.8")
 
     implementation("com.h2database:h2")
 

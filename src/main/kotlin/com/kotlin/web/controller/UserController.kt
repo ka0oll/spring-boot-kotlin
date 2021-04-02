@@ -1,5 +1,6 @@
 package com.kotlin.web.controller
 
+import com.kotlin.web.application.UserDto
 import com.kotlin.web.application.UserService
 import com.kotlin.web.domain.Article
 import com.kotlin.web.domain.User
@@ -15,7 +16,7 @@ class UserController(
 ) {
 
     @GetMapping("")
-    fun getList(): List<User> {
+    fun getList(): List<UserDto> {
         return userService.getList();
     }
 }
