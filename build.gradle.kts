@@ -5,9 +5,11 @@ plugins {
     id("io.spring.dependency-management") version "1.0.11.RELEASE"  apply false
 
     kotlin("jvm") version "1.4.31"
+    kotlin("kapt") version "1.4.31"
+
     kotlin("plugin.spring") version "1.4.31"
     kotlin("plugin.jpa") version "1.4.31"
-    kotlin("plugin.allopen") version "1.4.31"
+    kotlin("plugin.allopen") version "1.4.31" apply false
     kotlin("plugin.noarg") version "1.4.31"
 }
 
@@ -21,6 +23,7 @@ allOpen {
     annotation("javax.persistence.MappedSuperclass")
     annotation("com.kotlin.web.common.NoArgs")
 }
+
 
 allprojects {
     group = "com.kotlin.sample"
@@ -77,6 +80,7 @@ subprojects {
         testImplementation("org.springframework.boot:spring-boot-starter-test") {
             exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
         }
+
     }
 
 }

@@ -1,9 +1,10 @@
 package com.kotlin.sample.web.application
 
-import com.kotlin.sample.web.common.ModelMapperFactory
 import com.kotlin.sample.domain.Article
+import com.kotlin.sample.domain.QUser
 import com.kotlin.sample.domain.Repositories
 import com.kotlin.sample.domain.User
+import com.kotlin.sample.web.common.ModelMapperFactory
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -15,8 +16,10 @@ class UserService(
 
     @Transactional
     fun getList(): List<UserDto> {
-        val list = userRepository.findAll().map { map(it) }
-        return list;
+        val list = userRepository.findAll(QUser.user.id.gt(0L))
+        //userRepository.findAll().map { map(it) }
+
+        return list.map { map(it) };
     }
 
     @Transactional
