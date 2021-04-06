@@ -1,9 +1,9 @@
 package com.kotlin.sample.web.application
 
 import com.kotlin.sample.web.common.ModelMapperFactory
-import com.kotlin.sample.web.domain.Article
-import com.kotlin.sample.web.domain.Repositories
-import com.kotlin.sample.web.domain.User
+import com.kotlin.sample.domain.Article
+import com.kotlin.sample.domain.Repositories
+import com.kotlin.sample.domain.User
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 

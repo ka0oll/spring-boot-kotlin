@@ -1,4 +1,4 @@
-package com.kotlin.sample.web.domain
+package com.kotlin.sample.domain
 
 import java.time.LocalDateTime
 import javax.persistence.*

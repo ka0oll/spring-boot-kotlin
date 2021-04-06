@@ -1,5 +1,6 @@
-package com.kotlin.sample.web.domain
+package com.kotlin.sample.domain
 
+import com.kotlin.sample.domain.Article
 import javax.persistence.*
 
 @Entity

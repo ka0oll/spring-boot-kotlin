@@ -1,4 +1,4 @@
-package com.kotlin.sample.web
+package com.kotlin.sample
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

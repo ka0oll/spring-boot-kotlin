@@ -3,8 +3,6 @@ package com.kotlin.sample.web.controller
 import com.kotlin.sample.web.application.UserCreation
 import com.kotlin.sample.web.application.UserDto
 import com.kotlin.sample.web.application.UserService
-import com.kotlin.sample.web.domain.Article
-import com.kotlin.sample.web.domain.User
 import org.springframework.web.bind.annotation.*
 
 

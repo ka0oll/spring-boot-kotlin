@@ -1,4 +1,4 @@
-package com.kotlin.sample.web.domain
+package com.kotlin.sample.domain
 
 import org.springframework.data.jpa.repository.JpaRepository
 
